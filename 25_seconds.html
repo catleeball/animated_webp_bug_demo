@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Animated image format comparison</title>
+</head>
+<body>
+
+<h1>gif (left)&emsp;|&emsp;webp (right)</h1>
+<img src="25_seconds.gif" alt="25 second timer counting up.">
+<img src="25_seconds.webp" alt="25 second timer counting up.">
+<br>
+
+<small><code>ffmpeg -i ~/Pictures/Screenshots/25_seconds.mov -vcodec gif -filter:v fps=fps=24 -global_palette 1 -an -vsync 0 ~/Pictures/Screenshots/25_seconds.gif</code></small>
+<br>
+<small><code>ffmpeg -i ~/Pictures/Screenshots/25_seconds.mov -vcodec libwebp -filter:v fps=fps=24 -lossless 0 -compression_level 3 -q:v 70 -loop 1 -preset text -an -vsync 0 ~/Pictures/Screenshots/25_seconds.webp</code></small>
+
+</body>
+</html>
